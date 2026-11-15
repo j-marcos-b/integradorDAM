@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "Transporte Paraná",
+    "slug": "transporte-parana",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "transporteparana",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.transporteparana.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-sqlite",
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Transporte Paraná usa la cámara para leer el QR de una parada.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Transporte Paraná usa la cámara para adjuntar una foto a un reporte.",
+          "photosPermission": "Transporte Paraná accede a tus fotos solo si elegís adjuntar una a un reporte.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Transporte Paraná usa tu ubicación para ordenar las paradas cercanas."
+        }
+      ],
+      "expo-video",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Transporte Paraná usa Face ID para proteger el reingreso a tu cuenta."
+        }
+      ],
+      "./plugins/with-local-api-cleartext"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "572c57a6-8d65-4064-81b2-e8139e6b0b93"
+      }
+    }
+  }
+}
